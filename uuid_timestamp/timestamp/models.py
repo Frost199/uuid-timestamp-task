@@ -14,4 +14,4 @@ class UniqueIdentifierTimestamp(models.Model):
         verbose_name_plural = "UniqueIdentifierTimestamps"
 
     def __str__(self):
-        return self.unique_identifier
+        return str(self.unique_identifier)
