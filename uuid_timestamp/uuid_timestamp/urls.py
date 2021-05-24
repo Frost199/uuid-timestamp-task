@@ -19,6 +19,6 @@ from django.urls import path
 from timestamp.views import ListUuidTimestampView
 
 urlpatterns = [
-    path('', ListUuidTimestampView.as_view(), name='list_uuid_timestamp'),
+    path('', ListUuidTimestampView.as_view(), name='uuid_timestamp-list'),
     path('admin/', admin.site.urls),
 ]
