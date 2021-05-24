@@ -21,3 +21,15 @@ visits our application homepage.
 * Run the project migrations, since this is a small task, using databases like postgres will be an overkill, so we will leverage the sqlite database which is very light.  
   To run the migrations, run this command `python manage.py migrate`, make sure you are in the `uuid_timestamp` directory
 * Run the application with `python manage.py runserver`
+
+### Tests
+To run the tests, cd into `uuid-timestamp` directory which is the main project folder and run `python manage.py test`
+
+### Custom Middleware
+There is a custom middleware at `core/middleware/save_uuid_timestamp.py` this is responsible for saving our timestamp and UUID before the view is hit
+hereby, returning a new list of timestamp-uuid key value pairs, als, pagination was added.
+
+### Security Considerations
+
+As we know, that this application is a very simple one, and does not require some setup for security breaches,
+which is why you see `SECRET_KEY` in plain text and not an environment variable, and `DEBUG` is set to True instead of False.
