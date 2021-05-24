@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from timestamp.views import ListUuidTimestampView
+
 urlpatterns = [
+    path('', ListUuidTimestampView.as_view(), name='list_uuid_timestamp'),
     path('admin/', admin.site.urls),
 ]

@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from rest_framework import generics
 
-# Create your views here.
+from timestamp.models import UniqueIdentifierTimestamp
+from timestamp.serializer import ListUuidTimestampSerializer
+
+
+class ListUuidTimestampView(generics.ListAPIView):
+    serializer_class = ListUuidTimestampSerializer
+    queryset = UniqueIdentifierTimestamp.objects.all()
